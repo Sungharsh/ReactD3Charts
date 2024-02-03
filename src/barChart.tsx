@@ -7,9 +7,10 @@ interface Data {
 }
 interface BarChartProps {
   data: Data[];
+  name: string;
 }
 
-const BarChart: React.FC<BarChartProps> = ({ data }) => {
+const BarChart: React.FC<BarChartProps> = ({ data, name }) => {
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -51,10 +52,11 @@ const BarChart: React.FC<BarChartProps> = ({ data }) => {
       .attr("transform", `translate(${margin.left}, ${margin.top})`)
       .append("text")
       .attr("transform", "translate(100, 0)")
-      .attr("x", -10)
+      .attr("x", -75)
       .attr("y", -15)
       .attr("class", "title")
-      .text("Price Chart");
+      .text(name);
+
     svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)

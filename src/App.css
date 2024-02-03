@@ -7,6 +7,7 @@
 svg {
   background-color: #2d2d2d;
   border: solid 1px #565656;
+  box-shadow: 5px 3px 10px #666666;
 }
 .title {
   font-size: 18px;
@@ -34,6 +35,11 @@ svg {
 label,
 p {
   letter-spacing: 1px;
+  width: 50%;
+  margin: 0 auto;
+}
+p {
+  color: #adadad;
 }
 input,
 select {

@@ -30,7 +30,7 @@ const App = () => {
   return (
     <>
       <h1>Stock Price</h1>
-      <BarChart data={priceData} />
+      <BarChart data={priceData} name={`Price period: ${name}`} />
       <br />
       <br />
       <form onSubmit={handleSubmit}>
@@ -43,6 +43,11 @@ const App = () => {
         &nbsp; &nbsp;
         <input type="submit" value="Submit" />
       </form>
+      <br />
+      <p>
+        An exampl of dynamically rendered bar chart based on injected data into the component. The combination of D3 and
+        ReactJS is powerfull for data analysis and presentation.
+      </p>
     </>
   );
 };
