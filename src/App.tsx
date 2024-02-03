@@ -1,4 +1,4 @@
-import BarChart from "./barBhart";
+import BarChart from "./barChart";
 import "./App.css";
 
 const App = () => {
