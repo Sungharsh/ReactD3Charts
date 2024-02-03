@@ -5,11 +5,6 @@ const BarChart = () => {
   const chartRef = useRef(null);
 
   useEffect(() => {
-    //if conditional is a temporary setup for devlopment only to resolve svg rendering twice due to React.StrictMode
-    if (d3.select("svg")) {
-      d3.select("svg").remove();
-    }
-
     const chartElement = chartRef.current;
 
     const width = 500;
@@ -23,10 +18,14 @@ const BarChart = () => {
       .append("text")
       .attr("x", 10)
       .attr("y", 50)
-      .text("This is D3 SVG")
+      .text("This is D3 SVG sss")
       .attr("fill", "white")
       .attr("class", "title");
-  });
+
+    return () => {
+      d3.select("svg").remove();
+    };
+  }, []);
 
   return <div ref={chartRef}></div>;
 };
