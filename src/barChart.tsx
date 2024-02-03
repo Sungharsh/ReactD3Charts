@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import priceHistory1 from "./price-history1.json";
 
-const BarChart = () => {
+const BarChart: React.FC = () => {
   const chartRef = useRef(null);
 
   useEffect(() => {
