@@ -14,3 +14,15 @@ svg {
   fill: red;
   stroke: white;
 }
+.xHeadding,
+.yHeadding,
+.title {
+  fill: white;
+  font-size: 14px;
+  letter-spacing: 8px;
+  font-family: serif;
+}
+.title {
+  fill: #37a78f;
+  font-size: 24px;
+}
