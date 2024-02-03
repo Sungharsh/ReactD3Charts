@@ -8,7 +8,7 @@ const BarChart = () => {
   useEffect(() => {
     const chartElement = chartRef.current;
 
-    const margin = { top: 22, right: 30, bottom: 50, left: 35 };
+    const margin = { top: 22, right: 40, bottom: 50, left: 35 };
     const width = 550 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -85,6 +85,15 @@ const BarChart = () => {
       .attr("y", d => yScale(d))
       .attr("width", xScaleWithYears.bandwidth())
       .attr("height", d => (height - yScale(d)) as number);
+
+    bar
+      .append("text")
+      .attr("x", (_d, i) => xScaleWithIndex(i) as number)
+      .attr("y", d => yScale(d as number))
+      .attr("dy", "-0.5em")
+      .attr("dx", "0.8em")
+      .attr("class", "barValue")
+      .text(price => price);
 
     return () => {
       d3.select("svg").remove();
