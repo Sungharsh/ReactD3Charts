@@ -1,0 +1,12 @@
+[
+  { "year": 2001, "price": 302 },
+  { "year": 2002, "price": 375 },
+  { "year": 2003, "price": 415 },
+  { "year": 2004, "price": 285 },
+  { "year": 2005, "price": 505 },
+  { "year": 2006, "price": 578 },
+  { "year": 2007, "price": 601 },
+  { "year": 2008, "price": 688 },
+  { "year": 2009, "price": 345 },
+  { "year": 2010, "price": 780 }
+]
