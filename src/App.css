@@ -4,3 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+svg {
+  background-color: #2d2d2d;
+}
+.title {
+  font-size: 18px;
+}

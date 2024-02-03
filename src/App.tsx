@@ -1,5 +1,13 @@
+import BarChart from "./barBhart";
+import "./App.css";
+
 const App = () => {
-  return <p>Hello world</p>;
+  return (
+    <>
+      <h1>Stock Price</h1>
+      <BarChart />
+    </>
+  );
 };
 
 export default App;
