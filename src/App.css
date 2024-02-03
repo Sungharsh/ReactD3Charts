@@ -10,3 +10,7 @@ svg {
 .title {
   font-size: 18px;
 }
+.bar {
+  fill: red;
+  stroke: white;
+}
