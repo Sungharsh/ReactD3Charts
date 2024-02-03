@@ -84,6 +84,10 @@ const BarChart = () => {
       .attr("x", (_d, i) => xScaleWithIndex(i) as number)
       .attr("y", d => yScale(d))
       .attr("width", xScaleWithYears.bandwidth())
+      .transition()
+      .ease(d3.easeLinear)
+      .duration(100)
+      .delay((_d, i) => i * 150)
       .attr("height", d => (height - yScale(d)) as number);
 
     bar
