@@ -1,8 +1,15 @@
 import { useRef, useEffect } from "react";
 import * as d3 from "d3";
-import priceHistory1 from "./price-history1.json";
 
-const BarChart: React.FC = () => {
+interface Data {
+  year: number;
+  price: number;
+}
+interface BarChartProps {
+  data: Data[];
+}
+
+const BarChart: React.FC<BarChartProps> = ({ data }) => {
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -12,6 +19,9 @@ const BarChart: React.FC = () => {
     const width = 550 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
+    const years = data.map(values => values.year);
+    const price = data.map(values => values.price);
+
     const svg = d3
       .select(chartElement)
       .append("svg")
@@ -20,21 +30,17 @@ const BarChart: React.FC = () => {
       .append("g")
       .attr("transform", `translate(${margin.left + 15}, ${margin.top})`);
 
-    const xScaleWithYears = d3
-      .scaleBand<number>()
-      .domain(priceHistory1.map(values => values.year))
-      .range([0, width])
-      .padding(0.3);
+    const xScaleWithYears = d3.scaleBand<number>().domain(years).range([0, width]).padding(0.3);
 
     const xScaleWithIndex = d3
       .scaleBand<number>()
-      .domain(priceHistory1.map((_d, i) => i))
+      .domain(data.map((_d, i) => i))
       .range([0, width])
       .padding(0.3);
 
     const yScale = d3
       .scaleLinear<number>()
-      .domain([0, d3.max(priceHistory1.map(values => values.price)) as number])
+      .domain([0, d3.max(price) as number])
       .range([height, 30]);
 
     svg
@@ -71,10 +77,7 @@ const BarChart: React.FC = () => {
       .attr("class", "yHeadding")
       .text("Stock price");
 
-    const bar = svg
-      .selectAll(".bar")
-      .data(priceHistory1.map(values => values.price))
-      .enter();
+    const bar = svg.selectAll(".bar").data(price).enter();
 
     bar
       .append("g")
@@ -102,7 +105,7 @@ const BarChart: React.FC = () => {
     return () => {
       d3.select("svg").remove();
     };
-  }, []);
+  }, [data]);
 
   return <div ref={chartRef}></div>;
 };

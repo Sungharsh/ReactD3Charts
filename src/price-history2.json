@@ -1,0 +1,12 @@
+[
+  { "year": 2011, "price": 55 },
+  { "year": 2012, "price": 89 },
+  { "year": 2013, "price": 150 },
+  { "year": 2014, "price": 225 },
+  { "year": 2015, "price": 295 },
+  { "year": 2016, "price": 155 },
+  { "year": 2017, "price": 205 },
+  { "year": 2018, "price": 320 },
+  { "year": 2019, "price": 405 },
+  { "year": 2020, "price": 425 }
+]

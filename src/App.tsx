@@ -1,20 +1,22 @@
 import { useState } from "react";
 import BarChart from "./barChart";
 import priceChart1 from "./price-history1.json";
+import priceChart2 from "./price-history2.json";
 
 import "./App.css";
 
 const App = () => {
   const [priceData, setPriceData] = useState(priceChart1);
 
-  const handleSubmit = () => {
-    event?.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setPriceData(priceChart2);
   };
 
   return (
     <>
       <h1>Stock Price</h1>
-      <BarChart />
+      <BarChart data={priceData} />
       <br />
       <br />
       <form onSubmit={handleSubmit}>
