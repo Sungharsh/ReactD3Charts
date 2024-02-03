@@ -31,3 +31,31 @@ svg {
   fill: #e5e5e5;
   text-anchor: start;
 }
+label,
+p {
+  letter-spacing: 1px;
+}
+input,
+select {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  box-shadow: 6px 3px 10px #3a3a3a;
+  color: #ebebeb;
+}
+input:hover,
+select:hover {
+  border-color: #646cff;
+}
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
