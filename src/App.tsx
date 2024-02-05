@@ -6,13 +6,18 @@ import priceData3 from "./price-history3.json";
 
 import "./App.css";
 
-const App = () => {
-  const [priceData, setPriceData] = useState(priceData1);
+export interface DataTypes {
+  year: number;
+  price: number;
+}
+
+const App: React.FC = () => {
+  const [priceData, setPriceData] = useState<DataTypes[]>(priceData1);
   const [name, setName] = useState<string>("2001-10");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    let dataRange = priceData;
+    let dataRange: DataTypes[] = [];
     if (name === "2001-10") {
       dataRange = priceData1;
     } else if (name === "2011-20") {

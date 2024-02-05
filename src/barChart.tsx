@@ -1,12 +1,9 @@
 import { useRef, useEffect } from "react";
 import * as d3 from "d3";
+import { DataTypes } from "./App";
 
-interface Data {
-  year: number;
-  price: number;
-}
 interface BarChartProps {
-  data: Data[];
+  data: DataTypes[];
   name: string;
 }
 
